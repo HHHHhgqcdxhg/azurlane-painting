@@ -75,6 +75,33 @@ def draw4mult(imgPath, blur=0):
     return target
 
 
+def randGetList(L: list):
+    max = L.__len__() - 1
+    r = random.randint(0, max)
+    return L[r]
+
+
+def drawN(imgPath, w=1, h=1, blur=0):
+    target = Image.new("RGB", (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170), "white")
+    paint = draw(imgPath, 37 * w, 22 * h, blur)
+    paint = cv2.cvtColor(paint, cv2.COLOR_BGR2RGB)
+    paint_pil = Image.fromarray(paint.astype('uint8')).convert('RGB')
+
+    lEdge = 278
+    rEdge = 278 + 37 * 20 * w
+    uEdge = 110
+    dEdge = 22 * 20 * h + 110
+
+    for x in range(w):
+        target.paste(u, (278 + 741 * x, 0, 1019 + 741 * x, 109))
+        target.paste(d, (278 + 741 * x, dEdge, 1019 + 741 * x, dEdge + 170))
+    for y in range(h):
+        target.paste(randGetList(leftPics), (0, 440 * y, 278, 440 * y + 720))
+        target.paste(randGetList(rightPics), (rEdge, 440 * y, rEdge + 262, 440 * y + 720))
+    target.paste(paint_pil, (lEdge, uEdge, rEdge, dEdge))
+    return target
+
+
 if __name__ == '__main__':
     # out = drawRandBg("testimg/D{AH`3(ZX0GOUZ4]G]A)LG3.png")
     # out = draw4mult("testimg/54_raw.jpg")
@@ -82,9 +109,11 @@ if __name__ == '__main__':
     # out.show()
     # cv2.waitKey(0)
     import os
-    P = r'J:\projects\python_projects\zl-panting\outputs\chm'
-    op = r'J:\projects\python_projects\zl-panting\outputs\chm\o'
-    for x in range(13):
-        out = drawRandBg(os.path.join(P,f"{x}.png"),blur=0)
-        out.save(os.path.join(op,f"{x}.png"),"PNG")
+    t = drawN("testimg/ss_2.png",5,5)
+    t.show()
+    # P = r'J:\projects\python_projects\zl-panting\outputs\chm'
+    # op = r'J:\projects\python_projects\zl-panting\outputs\chm\o'
+    # for x in range(13):
+    #     out = drawRandBg(os.path.join(P, f"{x}.png"), blur=0)
+    #     out.save(os.path.join(op, f"{x}.png"), "PNG")
         # cv2.imwrite(,out)
