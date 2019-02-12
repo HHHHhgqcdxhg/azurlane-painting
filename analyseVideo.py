@@ -35,7 +35,7 @@ def makeVideo(input: str, output: str, cutFrames: int = 1, w: int = 1, h: int = 
     :param w:横向画板数
     :param h:纵向画板数
     :param blur:控制线条加粗,设为0的话不做加粗处理.不为0的话只能填单数,即1,3,5,7等.某些情况下线条加粗比较符合像素风,请按需取用
-    :return:None
+    :return:输出的视频没有音频轨道没有原视频对比,请放入其他剪辑软件中自行添加
     """
     inVideo = cv2.VideoCapture(input)
     inFps = inVideo.get(cv2.CAP_PROP_FPS)
