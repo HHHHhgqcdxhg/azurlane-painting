@@ -5,47 +5,67 @@ import paint
 import draw
 import draw2
 
-# Create a VideoCapture object and read from input file
-# If the input is the camera, pass 0 instead of the video file name
-# cap = cv2.VideoCapture('videos/点兔S1NCOP.mp4')
-# cap = cv2.VideoCapture('videos/mezy.flv')
-# cap = cv2.VideoCapture('videos/ssNCOP.mkv')
-# cap = cv2.VideoCapture('videos/wy2.mp4')
-cap = cv2.VideoCapture('videos/chm.flv')
 
-# Check if camera opened successfully
-if (cap.isOpened()== False):
-  print("Error opening video stream or file")
+def old():
+    cap = cv2.VideoCapture('videos/chm.flv')
+    # Check if camera opened successfully
+    if (cap.isOpened() == False):
+        print("Error opening video stream or file")
+    i = 0
+    while (cap.isOpened()):
+        ret, frame = cap.read()
+        if ret == True:
+            try:
+                o = paint.drawRandBg(frame, blur=None)
+                o.save(f"outputs/chm/{i}.png", "PNG")
+            except:
+                pass
+            i += 1
+        else:
+            break
+    cap.release()
+    cv2.destroyAllWindows()
 
-# Read until video is completed
-i = 0
-while(cap.isOpened()):
-  # Capture frame-by-frame
-  ret, frame = cap.read()
-  if ret == True:
-    # print(frame)
-    # if i % 2 == 0:
-    try:
-      # cv2.imwrite(f"outputs/mezy_raw/raw/{i}_raw.jpg", frame)
-      # o = paint.drawRandBg(frame,blur=None)
-      # o = paint.draw4mult(frame,blur=None)
-      o = paint.drawRandBg(frame,blur=None)
-      # o = draw2.draw(frame,37*4,22 * 4,blur=0)
-      # cv2.imwrite(f"outputs/ss/{i}.png",o)
-      o.save(f"outputs/chm/{i}.png","PNG")
-    except:
-      pass
-    i += 1
-    # Display the resulting frame
-    # cv2.imshow('Frame',frame)
-    # time.sleep(5)
 
-  # Break the loop
-  else:
-    break
+def makeVideo(input: str, output: str, cutFrames: int = 1, w: int = 1, h: int = 1, blur: int = 0):
+    """
+    :param input:输入视频的路径
+    :param output:输出视频的路径,请以".avi"结尾
+    :param cutFrames:抽帧频率,比如填1的话,则原视频每一帧都会处理后加入新视频中;填2的话,原视频每2帧会有一帧处理后加入新视频中
+    :param w:横向画板数
+    :param h:纵向画板数
+    :param blur:控制线条加粗,设为0的话不做加粗处理.不为0的话只能填单数,即1,3,5,7等.某些情况下线条加粗比较符合像素风,请按需取用
+    :return:None
+    """
+    inVideo = cv2.VideoCapture(input)
+    inFps = inVideo.get(cv2.CAP_PROP_FPS)
+    outFps = inFps / cutFrames
 
-# When everything done, release the video capture object
-cap.release()
+    outVideo = cv2.VideoWriter(output, cv2.VideoWriter_fourcc('X', 'V', 'I', 'D'), outFps,
+                               (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170))
+    if (inVideo.isOpened() == False):
+        print("Error opening video stream or file")
+    i = 0
+    while (inVideo.isOpened()):
+        ret, frame = inVideo.read()
+        if ret == True:
+            if i % cutFrames == 0:
+                try:
+                    o = paint.drawN(frame,w=w,h=h, blur=blur)
+                    img = cv2.cvtColor(np.asarray(o), cv2.COLOR_RGB2BGR)
+                except:
+                    pass
+                else:
+                    outVideo.write(img)
+            i += 1
+        else:
+            break
+    inVideo.release()
+    outVideo.release()
 
-# Closes all the frames
-cv2.destroyAllWindows()
+
+if __name__ == '__main__':
+    makeVideo("videos/wy.FLV", "xx.avi",7)
+
+
+
