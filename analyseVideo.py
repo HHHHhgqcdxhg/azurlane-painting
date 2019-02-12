@@ -41,6 +41,7 @@ def makeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, 
     inVideo = cv2.VideoCapture(inputVideoPath)
     inFps = inVideo.get(cv2.CAP_PROP_FPS)
     outFps = inFps / cutFrames
+    framesCount = int(inVideo.get(cv2.CAP_PROP_FRAME_COUNT))
 
     outVideo = cv2.VideoWriter(output, cv2.VideoWriter_fourcc('X', 'V', 'I', 'D'), outFps,
                                (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170))
@@ -58,6 +59,7 @@ def makeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, 
                     pass
                 else:
                     outVideo.write(img)
+                print(f"{i:>10} of {framesCount} frames handdled")
             i += 1
         else:
             break
@@ -66,7 +68,7 @@ def makeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, 
 
 
 if __name__ == '__main__':
-    makeVideo("videos/wy.FLV", "xx.avi",7)
+    makeVideo("videos/sjw.mp4", "sjw.avi",1,4,4)
 
 
 
