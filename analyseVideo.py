@@ -3,7 +3,7 @@ import numpy as np
 import time
 import paint
 # import draw
-import draw2
+# import draw2
 
 
 def old():
