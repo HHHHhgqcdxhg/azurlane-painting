@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import time
 import paint
-import draw
+# import draw
 import draw2
 
 
