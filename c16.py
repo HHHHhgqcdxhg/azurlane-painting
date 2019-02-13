@@ -46,7 +46,9 @@ def recreate_image(codebook, labels, w, h):
 
 if __name__ == '__main__':
     n_colors = 3
-    outImg = make("ysxb.jpg", n_colors)
+    outImg = make("testimg/ysxb.jpg", n_colors)
+    outImg *= 255
+    outImg = np.array(outImg,dtype='uint8')
     cv2.imshow(f"{n_colors}colors", outImg)
     cv2.waitKey(0)
 # plt.figure(2)
