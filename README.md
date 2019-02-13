@@ -29,10 +29,10 @@
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/NG{MQR4ZT6$0N%VR8S][GRK.png)
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/CBWUL9`[TF0@B5FPLW6F6IO.png)
 ### 视频示例
-- [av43275793](https://www.bilibili.com/video/av43275793)
+- [av43275793](https://www.bilibili.com/video/av43275793)  
     该视频为```video```模式,宽```4```个画板,高```4```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/7K3EIHFVJLXQZ_}J7C{`TDF.png)
-- [av43278623](https://www.bilibili.com/video/av43278623)
+- [av43278623](https://www.bilibili.com/video/av43278623)  
     该视频为```video```模式,宽```1```个画板,高```1```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/QQ截图20190213130103.jpg)
 ### 注意  
