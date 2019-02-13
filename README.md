@@ -23,7 +23,7 @@
     指定输入文件为```D:\neko.png```,模式为```image```,输出到```D:\neko_al.png```,宽```1```个画板,高```1```个画板,不使用加粗边缘
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/5J5O{]IO__SM$@YOMTCAAGM.png)  
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/neko2.png)
-- ```./alpainting.exe D:\neko.png -m image -o D:\neko_al_bold.png -x 1 -y 1 -b 3```
+- ```./alpainting.exe D:\neko.png -m image -o D:\neko_al_bold.png -x 1 -y 1 -b 3```  
     指定输入文件为```D:\neko.png```,模式为```image```,输出到```D:\neko_al_bold.png```,宽```1```个画板,高```1```个画板,边缘加粗为```3```  
     在这中简单的图片上有边缘加粗效果貌似比较好哦,复杂点的图片都推荐不使用边缘加粗
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/boldneko0.jpg)  
