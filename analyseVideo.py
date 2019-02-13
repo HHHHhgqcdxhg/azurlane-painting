@@ -29,14 +29,14 @@ def old():
 
 def makeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, h: int = 1, blur: int = 0):
     """
+    输出的视频没有音频轨道没有原视频对比,请放入其他剪辑软件中自行添加.另,如果w和h调的特别大的话,视频分辨率会超级高.
     :param input:输入视频的路径
     :param output:输出视频的路径,请以".avi"结尾
     :param cutFrames:抽帧频率,比如填1的话,则原视频每一帧都会处理后加入新视频中;填2的话,原视频每2帧会有一帧处理后加入新视频中
     :param w:横向画板数
     :param h:纵向画板数
     :param blur:控制线条加粗,设为0的话不做加粗处理.不为0的话只能填单数,即1,3,5,7等.某些情况下线条加粗比较符合像素风,请按需取用
-    :return:
-    输出的视频没有音频轨道没有原视频对比,请放入其他剪辑软件中自行添加.另,如果w和h调的特别大的话,视频分辨率会超级高.
+    :return:None
     """
     inVideo = cv2.VideoCapture(inputVideoPath)
     inFps = inVideo.get(cv2.CAP_PROP_FPS)
