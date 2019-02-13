@@ -13,7 +13,7 @@
 |指令|含义|默认|
 |:---:|---|:---:|
 |-m|指定模式,后面跟image或video来指定图片或视频模式|image|
-|-o|在后面跟上输出路径来指定输出路径,图片请以.png结尾,视频请以.avi结尾| |
+|-o|在后面跟上输出路径来指定输出路径,图片请以.png结尾,视频请以.avi结尾|azurlanePainting-当前时间.png<br>或 azurlanePainting-当前时间.avi|
 |-x|合成后的宽,后面跟数字,数字为几则横向用几块画板拼一起|1|
 |-y|合成后的高,后面跟数字,数字为几则纵向用几块画板拼一起|1|
 |-c|仅视频模式下有效,后面跟数字,数字为几则原视频每几帧取出一帧合成新视频|1|
@@ -25,3 +25,16 @@
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/neko2.png)
 - ```./alpainting.exe D:\video.mp4 -m video -o D:\video_al.avi -x 4 -y 4 -c 2 -b 0```  
     指定输入文件为```D:\video.mp4```,模式为```video```,输出到```D:\video_al.avi```,宽```4```个画板,高```4```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/[2I]AK$AR4]6Z8FVMG52_25.png)
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/NG{MQR4ZT6$0N%VR8S][GRK.png)
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/CBWUL9`[TF0@B5FPLW6F6IO.png)
+### 视频示例
+- [av43275793](https://www.bilibili.com/video/av43275793)
+    该视频为```video```模式,宽```4```个画板,高```4```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/7K3EIHFVJLXQZ_}J7C{`TDF.png)
+- [av43278623](https://www.bilibili.com/video/av43278623)
+    该视频为```video```模式,宽```1```个画板,高```1```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/QQ截图20190213130103.jpg)
+
+
+
