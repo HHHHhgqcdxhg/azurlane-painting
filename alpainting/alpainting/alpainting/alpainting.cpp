@@ -13,7 +13,7 @@ int main(int argc, char * argv[])
 		cmd += argv[i];
 	}
 	const char *cmd_c_str = cmd.c_str();
-	cout << cmd_c_str << endl;
+	//cout << cmd_c_str << endl;
 	system(cmd_c_str);
 	//system("pause");
 	return 0;
