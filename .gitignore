@@ -30,4 +30,5 @@ Release/
 Debug/
 README.*
 !README.md
+README.md merge=ours
 
