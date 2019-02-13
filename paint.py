@@ -82,6 +82,14 @@ def randGetList(L: list):
 
 
 def drawN(imgPath, w=1, h=1, blur=0):
+    """
+
+    :param imgPath:输入图片的路径
+    :param w:横向画板数
+    :param h:纵向画板数
+    :param blur:控制线条加粗,设为0的话不做加粗处理.不为0的话只能填单数,即1,3,5,7等.某些情况下线条加粗比较符合像素风,请按需取用
+    :return: PIL图片对象
+    """
     target = Image.new("RGB", (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170), "white")
     paint = draw(imgPath, 37 * w, 22 * h, blur)
     paint = cv2.cvtColor(paint, cv2.COLOR_BGR2RGB)
