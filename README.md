@@ -2,7 +2,7 @@
 碧蓝航线绘图日记画图工具
 
 ## 使用
-如果你不晓得怎么下载的话,可以[点此下载](/HHHHhgqcdxhg/azurlane-painting/archive/master.zip)
+如果你不晓得怎么下载的话,可以[点此下载](https://github.com/HHHHhgqcdxhg/azurlane-painting/archive/master.zip)
 ### 基本使用
 - 显示帮助信息
     ```./alpainting.exe -h```
