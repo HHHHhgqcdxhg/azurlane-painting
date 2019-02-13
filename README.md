@@ -1,4 +1,4 @@
-# azurlane-painting
+# azurlane-painting test啊啊啊啊啊啊啊啊
 碧蓝航线绘图日记画图工具  
 如果你不是一名老练的程序员的话,请移步[master分支](https://github.com/HHHHhgqcdxhg/azurlane-painting/tree/master).master分支打包了python环境在里面,对没有python环境的用户来说使用起来比较方便
 
