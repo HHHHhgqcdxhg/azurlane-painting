@@ -13,7 +13,7 @@ venv
 *.psd
 *.PSD
 *tmp*
-azurlanePainting-*
+*azurlanePainting-*
 py37/
 .vs/
 *.sin
@@ -29,25 +29,3 @@ py37/
 Release/
 Debug/
 
-blhx_raw/left/13.jpg
-blhx_raw/left/12.jpg
-blhx_raw/left/11.jpg
-blhx_raw/left/10.jpg
-blhx_raw/left/9.jpg
-blhx_raw/left/8.jpg
-blhx_raw/left/7.jpg
-blhx_raw/left/6.jpg
-blhx_raw/left/5.jpg
-blhx_raw/left/4.jpg
-blhx_raw/left/3.jpg
-blhx_raw/right/13.jpg
-blhx_raw/right/12.jpg
-blhx_raw/right/11.jpg
-blhx_raw/right/10.jpg
-blhx_raw/right/9.jpg
-blhx_raw/right/8.jpg
-blhx_raw/right/7.jpg
-blhx_raw/right/6.jpg
-blhx_raw/right/5.jpg
-blhx_raw/right/4.jpg
-blhx_raw/right/3.jpg
