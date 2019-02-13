@@ -4,7 +4,7 @@ def getArgs():
     parser.add_argument('input', metavar='input', type=str, help='input file path')
     parser.add_argument('-o', '--output', type=str, help='output file path. image end by .png,video end by .avi')
     parser.add_argument('-m', '--mode', type=str, help='mode to run this program',
-                        choices=["video", "image"], default="image")
+                        choices=["video", "image"], default=None)
 
     parser.add_argument('-b', '--bold', type=int, help='bold of lines of images,integer', default=0)
     parser.add_argument('-x', '--width', type=int, help='width to run', default=1)
@@ -22,6 +22,19 @@ def mainFunc(args):
     if not os.path.exists(args.input):
         print("error: input file not found!")
         return
+
+    if args.mode == None:
+        fileTypeS = args.input.split(".")[-1]
+        imageTypess = ("png","jpg","jpeg","bmp")
+        videoTypess = ("flv", "mp4", "avi", "mkv", "wma", "rmvb","mov")
+        fileTypeSLower = fileTypeS.lower()
+        if fileTypeSLower in imageTypess:
+            args.mode = "image"
+        elif fileTypeSLower in videoTypess:
+            args.mode = "video"
+        else:
+            print("error: con't identify you input file mode,please appoint mode by -m argument")
+
     if args.mode == "image":
         print(f"start draw image {args.input}......")
         import paint
@@ -31,7 +44,6 @@ def mainFunc(args):
         #     args.y = 1
 
         o = paint.drawN(imgPath=args.input, w=args.width, h=args.height, blur=args.bold)
-        absInputPath = os.path.abspath(args.input)
         if not args.output is None:
             oPath = args.output
 
