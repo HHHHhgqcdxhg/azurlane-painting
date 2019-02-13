@@ -28,4 +28,6 @@ py37/
 *.sln
 Release/
 Debug/
+README.*
+!README.md
 
