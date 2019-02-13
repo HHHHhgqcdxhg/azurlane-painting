@@ -21,17 +21,23 @@
 ### 使用示例
 - ```./alpainting.exe D:\neko.png -m image -o D:\neko_al.png -x 1 -y 1 -b 0```  
     指定输入文件为```D:\neko.png```,模式为```image```,输出到```D:\neko_al.png```,宽```1```个画板,高```1```个画板,不使用加粗边缘
-    ![](http://pmplttpn9.bkt.clouddn.com/picgo/5J5O{]IO__SM$@YOMTCAAGM.png)
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/5J5O{]IO__SM$@YOMTCAAGM.png)  
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/neko2.png)
+- ```./alpainting.exe D:\neko.png -m image -o D:\neko_al_bold.png -x 1 -y 1 -b 3```
+    指定输入文件为```D:\neko.png```,模式为```image```,输出到```D:\neko_al_bold.png```,宽```1```个画板,高```1```个画板,边缘加粗为```3```  
+    在这中简单的图片上有边缘加粗效果貌似比较好哦,复杂点的图片都推荐不使用边缘加粗
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/boldneko0.jpg)  
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/boldneko.jpg)
+
 - ```./alpainting.exe D:\video.mp4 -m video -o D:\video_al.avi -x 4 -y 4 -c 2 -b 0```  
     指定输入文件为```D:\video.mp4```,模式为```video```,输出到```D:\video_al.avi```,宽```4```个画板,高```4```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
-    ![](http://pmplttpn9.bkt.clouddn.com/picgo/[2I]AK$AR4]6Z8FVMG52_25.png)
-    ![](http://pmplttpn9.bkt.clouddn.com/picgo/NG{MQR4ZT6$0N%VR8S][GRK.png)
-    ![](http://pmplttpn9.bkt.clouddn.com/picgo/CBWUL9`[TF0@B5FPLW6F6IO.png)
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/[2I]AK$AR4]6Z8FVMG52_25.png)  
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/NG{MQR4ZT6$0N%VR8S][GRK.png)  
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/CBWUL9`[TF0@B5FPLW6F6IO.png)  
 ### 视频示例
 - [av43275793](https://www.bilibili.com/video/av43275793)  
     该视频为```video```模式,宽```4```个画板,高```4```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
-    ![](http://pmplttpn9.bkt.clouddn.com/picgo/7K3EIHFVJLXQZ_}J7C{`TDF.png)
+    ![](http://pmplttpn9.bkt.clouddn.com/picgo/7K3EIHFVJLXQZ_}J7C{`TDF.png)  
 - [av43278623](https://www.bilibili.com/video/av43278623)  
     该视频为```video```模式,宽```1```个画板,高```1```个画板,原视频每```2```帧取一帧添加到输出视频,不使用边缘加粗
     ![](http://pmplttpn9.bkt.clouddn.com/picgo/QQ截图20190213130103.jpg)
