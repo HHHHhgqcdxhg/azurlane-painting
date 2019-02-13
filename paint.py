@@ -7,7 +7,7 @@ import numpy as np
 import random
 
 CWD = os.path.dirname(os.path.abspath(__file__))
-generalPic = Image.open("blhx_raw/general.jpg").convert("RGB")
+# generalPic = Image.open("blhx_raw/general.jpg").convert("RGB")
 leftPath = os.path.realpath(os.path.join(CWD, "./blhx_raw/left"))
 rightPath = os.path.realpath(os.path.join(CWD, "./blhx_raw/right"))
 leftPics = [Image.open(os.path.join(leftPath, l)).convert("RGB") for l in os.listdir(leftPath)]
@@ -16,17 +16,17 @@ u = Image.open(os.path.realpath(os.path.join(CWD, "./blhx_raw/up.jpg"))).convert
 d = Image.open(os.path.realpath(os.path.join(CWD, "./blhx_raw/down.jpg"))).convert("RGB")
 
 
-def drawGeneral(imgPath, w=37, h=22, blur=3):
-    target = copy.copy(generalPic)
-    paint = draw(imgPath, w, h, blur)
-    # print(paint)
-    # cv2.imshow("paint",paint)
-    paint = cv2.cvtColor(paint, cv2.COLOR_BGR2RGB)
-    paint_pil = Image.fromarray(paint.astype('uint8')).convert('RGB')
-
-    target.paste(paint_pil, (278, 109, 1018, 549))
-    # target.show()
-    return target
+# def drawGeneral(imgPath, w=37, h=22, blur=3):
+#     target = copy.copy(generalPic)
+#     paint = draw(imgPath, w, h, blur)
+#     # print(paint)
+#     # cv2.imshow("paint",paint)
+#     paint = cv2.cvtColor(paint, cv2.COLOR_BGR2RGB)
+#     paint_pil = Image.fromarray(paint.astype('uint8')).convert('RGB')
+#
+#     target.paste(paint_pil, (278, 109, 1018, 549))
+#     # target.show()
+#     return target
 
 
 def drawRandBg(imgPath, w=37, h=22, blur=3):
@@ -109,7 +109,7 @@ if __name__ == '__main__':
     # out.show()
     # cv2.waitKey(0)
     import os
-    t = drawN("testimg/ss_2.png",5,5)
+    t = drawN("C:\yuno.jpeg",5,5)
     t.show()
     # P = r'J:\projects\python_projects\zl-panting\outputs\chm'
     # op = r'J:\projects\python_projects\zl-panting\outputs\chm\o'

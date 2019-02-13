@@ -2,8 +2,11 @@ import c8
 import minifyImg
 import cv2
 import numpy as np
+import os
 
-pixlels = [cv2.imread(f"pixels/{x}.jpg") for x in range(8)]
+CWD = os.path.dirname(os.path.abspath(__file__))
+
+pixlels = [cv2.imread(os.path.realpath(os.path.join(CWD,f"./pixels/{x}.jpg"))) for x in range(8)]
 
 def make(imgPath,w=37,h=22,blur=3):
     # print(f"img,imgFollow = minifyImg.make({imgPath},w,h,blur)")
