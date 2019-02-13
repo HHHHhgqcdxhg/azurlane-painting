@@ -1,5 +1,6 @@
 # azurlane-painting
-碧蓝航线绘图日记画图工具
+碧蓝航线绘图日记画图工具  
+如果你是一名老练的程序员,请移步develop分支.master分支打包了python环境在里面,然后要clone的话会很大...
 
 ## 下载
 - 如果你不晓得怎么下载的话,可以[点此下载](https://github.com/HHHHhgqcdxhg/azurlane-painting/archive/master.zip)
