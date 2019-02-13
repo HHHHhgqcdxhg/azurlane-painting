@@ -29,4 +29,6 @@ Release/
 Debug/
 README.*
 !README.md
-
+README.md merge=ours
+py37/ merge=ours
+alpainting.exe merge=ours
