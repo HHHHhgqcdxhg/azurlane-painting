@@ -1,6 +1,6 @@
 # azurlane-painting
 碧蓝航线绘图日记画图工具  
-如果你是一名老练的程序员,请移步develop分支.master分支打包了python环境在里面,然后要clone的话会很大...
+如果你是一名老练的程序员,请移步develop分支.
 
 ## 下载
 - 如果你不晓得怎么下载的话,可以[点此下载](https://github.com/HHHHhgqcdxhg/azurlane-painting/archive/master.zip)
@@ -15,7 +15,7 @@
 ### 详细参数
 |指令|含义|默认|
 |:---:|---|:---:|
-|-m|指定模式,后面跟image或video来指定图片或视频模式|image|
+|-m|指定模式,后面跟image或video来指定图片或视频模式|识别文件后缀名,判断video或image|
 |-o|在后面跟上输出路径来指定输出路径,图片请以.png结尾,视频请以.avi结尾|与原文件目录相同<br>文件名后缀名改为png或avi<br>并在后缀名前加上一串时间<br>如neko-1550088231.png|
 |-x|合成后的宽,后面跟数字,数字为几则横向用几块画板拼一起|1|
 |-y|合成后的高,后面跟数字,数字为几则纵向用几块画板拼一起|1|
