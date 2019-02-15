@@ -84,14 +84,14 @@ if __name__ == '__main__':
 
     t0 = time.perf_counter()
     n_colors = 16
-    outImg,outImgFollow = make("testimg/1.jpg", n_colors)
+    outImgFollow = make("testimg/1.jpg", n_colors)
     # outImg *= 255
-    outImg = np.array(outImg,dtype='uint8')
-    t1 = time.perf_counter()
-    print(t1 - t0)
-    cv2.imshow(f"{n_colors}colors", outImg)
+    # outImg = np.array(outImg,dtype='uint8')
+    # t1 = time.perf_counter()
+    # print(t1 - t0)
+    # cv2.imshow(f"{n_colors}colors", outImg)
     print(outImgFollow)
-    cv2.waitKey(0)
+    # cv2.waitKey(0)
     # def my_func(a):
     #     print(a)
     #     return (a[0] + a[-1]) * 0.5

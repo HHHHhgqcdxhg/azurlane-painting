@@ -4,6 +4,7 @@ import time
 import paint
 # import draw
 # import draw2
+import os
 
 
 def old():
@@ -66,9 +67,97 @@ def makeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, 
     inVideo.release()
     outVideo.release()
 
+def futuresMakeVideo(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, h: int = 1, blur: int = 0,works=os.cpu_count()):
+    from concurrent import futures
+
+    inVideo = cv2.VideoCapture(inputVideoPath)
+    inFps = inVideo.get(cv2.CAP_PROP_FPS)
+    outFps = inFps / cutFrames
+    framesCount = int(inVideo.get(cv2.CAP_PROP_FRAME_COUNT))
+    inVideo.get()
+    outVideo = cv2.VideoWriter(output, cv2.VideoWriter_fourcc('X', 'V', 'I', 'D'), outFps,
+                               (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170))
+    if (inVideo.isOpened() == False):
+        print("Error opening video stream or file")
+
+    works = works if 0 < works <= os.cpu_count() else os.cpu_count()
+    toHanddle = {}
+    handdledFrames = {}
+    readVideoI = 0
+    handdleVideoI = 0
+    def readOneGroup():
+        nonlocal readVideoI
+        for x in range(works):
+            ret, frame = inVideo.read()
+            toHanddle[str(readVideoI)] = frame
+            readVideoI += 1
+        return toHanddle
+
+    def handdleFrame(x:int):
+        nonlocal toHanddle,handdledFrames,handdleVideoI
+        sx = str(x)
+        frame = toHanddle[sx]
+        handdledFrame = paint.drawN(frame, w=w, h=h, blur=blur)
+        handdledFrame = cv2.cvtColor(np.asarray(handdledFrame), cv2.COLOR_RGB2BGR)
+        handdledFrames[sx] = handdledFrame
+        for i in range(handdleVideoI,x + 1):
+            si = str(i)
+            if si in handdledFrames.keys():
+                outVideo.write(handdledFrames[si])
+                handdleVideoI += 1
+            else:
+                continue
+        if toHanddle.__len__() <= 16:
+            readOneGroup()
+    handdled = 0
+    readOneGroup()
+    readOneGroup()
+    print(toHanddle)
+    with futures.ProcessPoolExecutor(works) as exe:
+        all_task = [exe.submit(handdleFrame,i) for i in range(framesCount)]
+        for future in futures.as_completed(all_task):
+            handdled += 1
+            print(f"{handdled}/{framesCount} handdled")
+    inVideo.release()
+    outVideo.release()
+
+def futuresMakeVideoFuck(inputVideoPath: str, output: str, cutFrames: int = 1, w: int = 1, h: int = 1, blur: int = 0,works=os.cpu_count()):
+    from concurrent import futures
+
+    inVideo = cv2.VideoCapture(inputVideoPath)
+    inFps = inVideo.get(cv2.CAP_PROP_FPS)
+    outFps = inFps / cutFrames
+    framesCount = int(inVideo.get(cv2.CAP_PROP_FRAME_COUNT))
+    outVideo = cv2.VideoWriter(output, cv2.VideoWriter_fourcc('X', 'V', 'I', 'D'), outFps,
+                               (37 * 20 * w + 278 + 262, 22 * 20 * h + 110 + 170))
+    if (inVideo.isOpened() == False):
+        print("Error opening video stream or file")
+
+    works = works if 0 < works <= os.cpu_count() else os.cpu_count()
+    frames = []
+    while (inVideo.isOpened()):
+        ret, frame = inVideo.read()
+        if ret == True:
+            frames.append(frame)
+    def handdleOne(frame):
+        o = paint.drawN(frame, w=w, h=h, blur=blur)
+        img = cv2.cvtColor(np.asarray(o), cv2.COLOR_RGB2BGR)
+        pass
+    with futures.ProcessPoolExecutor(works) as exe:
+        all_task = [exe.submit(handdleFrame, i) for i in range(framesCount)]
+        for future in futures.as_completed(all_task):
+            handdled += 1
+            print(f"{handdled}/{framesCount} handdled")
+    inVideo.release()
+    outVideo.release()
+
 
 if __name__ == '__main__':
-    makeVideo("videos/sjw.mp4", "sjw.avi",1,4,4)
-
-
+    # makeVideo("videos/sjw.mp4", "sjw.avi",1,4,4)
+    futuresMakeVideoFuck("videos/ng.mp4", "ng.avi",1,1,1)
+    # print("1" in {"1":3}.keys())
+    # x = 0
+    # for n in range(x,10):
+    #     print(n)
+    #     x = 5
 

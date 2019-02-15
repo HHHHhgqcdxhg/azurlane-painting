@@ -119,7 +119,7 @@ if __name__ == '__main__':
     import time
     t0 = time.perf_counter()
     # t = drawN(r"testimg\1.jpg",5,5)
-    t = drawN(r"testimg\yuno.jpeg",1,1)
+    t = drawN(r"testimg\1.jpg",1,1)
     t1 = time.perf_counter() - t0
     print(t1 - t0)
     t.show()

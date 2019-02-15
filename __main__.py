@@ -58,6 +58,7 @@ def mainFunc(args):
         o.save(oPath, "PNG")
         print(f"image drawn completed -> {oPath}")
     elif args.mode == "video":
+        print(f"start handdle video {args.input}......")
         import analyseVideo
 
         if not args.output is None:
@@ -73,7 +74,7 @@ def mainFunc(args):
             # import time
             #
             # oPath = f"azurlanePainting-{int(time.time())}.avi"
-        print(f"start handdle video {args.input}......")
+
         analyseVideo.makeVideo(inputVideoPath=args.input, output=oPath, cutFrames=args.cutFrames, w=args.width,
                                h=args.height, blur=args.bold)
         print(f"video handdled completed -> {oPath}")
