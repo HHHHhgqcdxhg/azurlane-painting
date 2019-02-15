@@ -83,7 +83,6 @@ def randGetList(L: list):
 
 def drawN(imgPath, w=1, h=1, blur=0):
     """
-
     :param imgPath:输入图片的路径
     :param w:横向画板数
     :param h:纵向画板数
@@ -119,7 +118,8 @@ if __name__ == '__main__':
     import os
     import time
     t0 = time.perf_counter()
-    t = drawN(r"testimg\1.jpg",5,5)
+    # t = drawN(r"testimg\1.jpg",5,5)
+    t = drawN(r"testimg\yuno.jpeg",1,1)
     t1 = time.perf_counter() - t0
     print(t1 - t0)
     t.show()

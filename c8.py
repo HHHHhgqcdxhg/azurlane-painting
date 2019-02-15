@@ -8,7 +8,7 @@ from functools import lru_cache
 
 import time
 
-import c16
+# import c16
 
 cs_rgb = [
     [49, 40, 41],
@@ -37,8 +37,9 @@ def to8color(x, y, z):
     ret = [0, 0, 0]
     min_d = 1145141919810
     miniI = 0
+    thisColor = (x, y, z)
     for i,c in enumerate(cs_rgb):
-        t = color_diff([x, y, z], c)
+        t = color_diff(thisColor, c)
         if t < min_d:
             min_d = t
             ret = c
@@ -54,7 +55,7 @@ def make(img):
     img = c16.make(img, 16)
     # cv2.imshow("img16",img)
     # print(img.shape)
-    img *= 255
+    # img *= 255
     imgLen = img.shape[0] * img.shape[1]
     # print(img.shape[0] * img.shape[1])
     img2Arr = []
