@@ -29,3 +29,8 @@ Release/
 Debug/
 README.*
 !README.md
+*.png
+*.jpg
+!pixels/*.jpg
+!blhx_raw/*.jpg
+!blhx_raw/*

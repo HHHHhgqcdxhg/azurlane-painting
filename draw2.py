@@ -48,9 +48,13 @@ if __name__ == '__main__':
     # img,imgF = make("test4.png")
     # cv2.imshow("img",img)
     # print(imgF)
-    img = draw("testimg/54_raw.jpg",37*4,22 * 4,blur=0)
+    # import time
+    # t0 = time.perf_counter()
+    img = draw("testimg/1.jpg",37*4,22 * 4,blur=0)
     cv2.imshow("img",img)
     cv2.imwrite("ooo.png",img)
+    # t1 = time.perf_counter()
+    # print(t1 - t0)
     cv2.waitKey(0)
 
 

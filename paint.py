@@ -117,7 +117,11 @@ if __name__ == '__main__':
     # out.show()
     # cv2.waitKey(0)
     import os
-    t = drawN("C:\yuno.jpeg",5,5)
+    import time
+    t0 = time.perf_counter()
+    t = drawN(r"testimg\1.jpg",5,5)
+    t1 = time.perf_counter() - t0
+    print(t1 - t0)
     t.show()
     # P = r'J:\projects\python_projects\zl-panting\outputs\chm'
     # op = r'J:\projects\python_projects\zl-panting\outputs\chm\o'
