@@ -6,7 +6,7 @@
 - 如果你不晓得怎么下载的话,可以[点此下载](https://github.com/HHHHhgqcdxhg/azurlane-painting/archive/master.zip)
 ## 使用
 下载解压后,进入该工具文件夹  
-![](http://pmplttpn9.bkt.clouddn.com/picgo/QQ图片20190215150619.png)
+![](http://pmplttpn9.bkt.clouddn.com/picgo/QQ图片20190215150619.png)  
 注意:在该文件夹中,**直接运行```alpainting.exe```是没用的哦**  
 1. 在空白处鼠标左键点击一下,确保没有正在选中文件  
 2. 按住shift,在空白处右键点击,弹出菜单,点击```在此处打开 Powershell窗口```.如果没有```在此处打开 Powershell窗口```的话,请点击```在此处打开 命令行窗口```.两者都没有的话,请确保没有正选中的文件.  
@@ -20,7 +20,7 @@
     例如:```./alpainting.exe -m D:\neko.png```
 - 合成视频
     ```./alpainting.exe -m video heres-a-video.mp4```  
-    例如:```./alpainting.exe -m D:\喵咪日常.mp4```  
+    例如:```./alpainting.exe -m video D:\喵咪日常.mp4```  
 
 注意:**输入文件路径中不能存在空格**
 ### 详细参数
